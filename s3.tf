@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "test_bucket" {
   acl    = "private" 
 
   tags = {
-    bucket        = "test"
+    bucket        = "testing"
   }
 }
 
