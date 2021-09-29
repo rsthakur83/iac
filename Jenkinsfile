@@ -22,7 +22,7 @@ pipeline {
         stage('Terraform Unit Tests') {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
-                   sh 'pytest -k terraform tests/ -v'
+                   sh 'sudo pytest -k terraform tests/ -v'
                 }
               }
             }
@@ -30,7 +30,7 @@ pipeline {
         stage('Terraform Compliance') {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
-                   sh 'terraform-compliance -f compliance/ -p /tmp/file.out'
+                   sh 'sudo terraform-compliance -f compliance/ -p /tmp/file.out'
                 }
               }
             }
@@ -38,7 +38,7 @@ pipeline {
         stage('Terraform Security Testing Using CheckOv') {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
-                   sh 'checkov -f /tmp/tfplan.json'
+                   sh 'sudo checkov -f /tmp/tfplan.json'
                 }
               }
             }
