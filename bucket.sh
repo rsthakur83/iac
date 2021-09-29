@@ -8,7 +8,8 @@ echo `pwd`
 echo `pwd`
 echo `pwd`
 echo `ls -l`
-./terraform init
+./terraform init -reconfigure
+#./terraform init
 ./terraform plan -out=/tmp/plan.out
 ./terraform show -no-color -json /tmp/plan.out > /tmp/test.json
 ./terraform apply --auto-approve
