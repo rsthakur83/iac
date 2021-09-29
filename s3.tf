@@ -3,9 +3,6 @@ provider "aws" {
 }
 
 
-provider "aws" {
-  region = var.aws_region
-}
 
 
 #### S3 bucket to store terraform state file
@@ -31,7 +28,7 @@ resource "aws_s3_bucket" "terraform-state" {
 
 resource "aws_s3_bucket" "test_bucket" {
 
-  bucket = "cloudnewbucketforyou1"
+  bucket = "cloudnewbucketforyouiac"
   acl    = "private" 
 
   tags = {
