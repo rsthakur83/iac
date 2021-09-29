@@ -1,0 +1,5 @@
+checkov==2.0.450
+pytest==6.2.5
+pytest-terraform==0.5.3
+terraform-compliance==1.3.28
+boto3==1.17.112
