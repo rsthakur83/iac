@@ -8,7 +8,7 @@ provider "aws" {
 #### S3 bucket to store terraform state file
 
 resource "aws_s3_bucket" "terraform-state" {
-  bucket        = "terraform_state_bucket_iac23"
+  bucket        = "terraform-state-bucket-iac"
   acl           = "private"
   force_destroy = true
   versioning {
