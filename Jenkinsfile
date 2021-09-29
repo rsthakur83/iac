@@ -38,7 +38,7 @@ pipeline {
         stage('Terraform Security Testing Using CheckOv') {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
-                   sh 'sudo checkov -f /tmp/tfplan.json'
+                   sh 'sudo checkov -f /tmp/tfplan.json --skip-check "CKV_AWS_144,CKV_AWS_21,CKV_AWS_145,CKV_AWS_19,CKV2_AWS_6"'
                 }
               }
             }
