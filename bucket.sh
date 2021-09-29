@@ -7,6 +7,7 @@ chmod +x terraform
 echo `pwd`
 echo `pwd`
 echo `pwd`
+echo `ls -l`
 ./terraform init
 ./terraform plan -out=/tmp/plan.out
 ./terraform show -no-color -json /tmp/plan.out > /tmp/test.json
