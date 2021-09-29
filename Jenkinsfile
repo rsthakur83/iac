@@ -10,7 +10,7 @@ pipeline {
               }
             }
 
-        stage('Create  Bucket') {
+        stage('Checking State Changes') {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
                     sh 'chmod +x bucket.sh'
@@ -30,7 +30,7 @@ pipeline {
         stage('Terraform Compliance') {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
-                   sh 'sudo terraform-compliance -f compliance/ -p /tmp/file.out'
+                   sh 'sudo terraform-compliance -f compliance/ -p file.out'
                 }
               }
             }
@@ -39,6 +39,14 @@ pipeline {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
                    sh 'sudo checkov -f /tmp/tfplan.json'
+                }
+              }
+            }
+
+        stage('Make Bucket  Bucket') {
+            steps {
+                withAWS(credentials: 'aws-credential', region: 'us-east-1') {
+                    sh './terraform apply --auto-approve'
                 }
               }
             }

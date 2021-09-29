@@ -16,6 +16,6 @@ echo `ls -l`
 ./terraform show -no-color -json /tmp/plan.out > /tmp/test.json
 ./terraform apply --auto-approve
 
-./terraform plan -out=/tmp/file.out
+./terraform plan -out=file.out
 
 ./terraform show -json /tmp/plan.out > /tmp/tfplan.json
