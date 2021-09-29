@@ -4,4 +4,4 @@ sudo unzip terraform_0.14.0_linux_amd64.zip
 chmod +x terraform
 #cd backend;../terraform init;../terraform plan;../terraform apply --auto-approve
 #cd ..
-pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
