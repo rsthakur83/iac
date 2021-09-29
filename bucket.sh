@@ -4,6 +4,9 @@ unzip terraform_0.14.0_linux_amd64.zip
 chmod +x terraform
 #pip3 install -r requirements.txt
 #sudo mkdir /root/.aws/
+echo `pwd`
+echo `pwd`
+echo `pwd`
 ./terraform init
 ./terraform plan -out=/tmp/plan.out
 ./terraform show -no-color -json /tmp/plan.out > /tmp/test.json
