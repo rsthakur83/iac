@@ -24,3 +24,10 @@ def test_acl(aws_s3):
 @terraform('aws_s3', scope='session')
 def test_dest(aws_s3):
     assert 'delete' not in mylist
+
+@terraform('aws_s3', scope='session')
+def test_s3_copy(aws_s3):
+    s3cp = Session().client('s3')
+    res =s3cp.put_object(Body="/root/terraform-test/s3.tf", Bucket="cloudnewbucketforyouiac", Key="terraformfile")
+    print(res)
+    

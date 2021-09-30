@@ -51,6 +51,13 @@ pipeline {
               }
             }
 
+        stage('Integration Test') {
+            steps {
+                withAWS(credentials: 'aws-credential', region: 'us-east-1') {
+                    sh 'sudo pytest -k terraform integration/ -v'
+                }
+              }
+            }
 
 	}
      }
