@@ -46,7 +46,7 @@ pipeline {
         stage('Make Bucket Changes') {
             steps {
                 withAWS(credentials: 'aws-credential', region: 'us-east-1') {
-                    sh './terraform apply --auto-approve'
+                    sh './terraform apply --auto-approve -lock=false'
                 }
               }
             }
