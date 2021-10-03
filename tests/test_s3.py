@@ -23,7 +23,7 @@ def test_acl(aws_s3):
 
 @terraform('aws_s3', scope='session')
 def test_dest(aws_s3):
-    assert 'delete' not in mylist
+    assert 'delet' not in mylist
 
 @terraform('aws_s3', scope='session')
 def test_s3_copy(aws_s3):
