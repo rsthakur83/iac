@@ -25,9 +25,9 @@ def test_acl(aws_s3):
 def test_dest(aws_s3):
     assert 'notdel' not in mylist
 
-@terraform('aws_s3', scope='session')
-def test_s3_copy(aws_s3):
-    s3cp = Session().client('s3')
-    res =s3cp.put_object(Body="/root/terraform-test/s3.tf", Bucket="cloudnewbucketforyouiac-newone", Key="terraformfile")
-    print(res)
+# @terraform('aws_s3', scope='session')
+# def test_s3_copy(aws_s3):
+#     s3cp = Session().client('s3')
+#     res =s3cp.put_object(Body="/root/terraform-test/s3.tf", Bucket="cloudnewbucketforyouiac-newone", Key="terraformfile")
+#     print(res)
     
