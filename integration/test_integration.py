@@ -8,3 +8,4 @@ import json
 def test_s3_copy(aws_s3):
     s3cp = Session().client('s3')
     res =s3cp.put_object(Body="/root/terraform-test/s3.tf", Bucket="cloudnewbucketforyouiac-newone", Key="terraformfile")
+    del = s3cp.delete_object(Bucket='cloudnewbucketforyouiac-newone', Key='terraformfile')
